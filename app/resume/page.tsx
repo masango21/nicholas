@@ -24,6 +24,24 @@ export default function ResumePage() {
             Download Full CV
           </a>
         </div>
+
+        <div className="mt-10 rounded-3xl border border-amber-800 bg-neutral-900/80 p-6">
+          <h2 className="text-2xl font-semibold text-amber-100">Certifications</h2>
+          <div className="mt-4 rounded-2xl bg-slate-950/80 p-5">
+            <h3 className="text-xl font-semibold text-amber-100">Web Development Fundamentals</h3>
+            <p className="mt-3 text-amber-200"><strong>Issued by:</strong> IBM SkillsBuild</p>
+            <p className="mt-1 text-amber-200"><strong>Date:</strong> Aug 03, 2026</p>
+            <p className="mt-1 text-amber-200"><strong>Recipient:</strong> Nkosinathi Nicholas Masango</p>
+            <a
+              href="https://www.credly.com/badges/3d0f4c71-996c-462c-99af-3b04821bbc92"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex rounded-full bg-amber-600 px-5 py-2 font-semibold text-black transition hover:bg-amber-500"
+            >
+              Verify Certificate
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   )
