@@ -8,7 +8,7 @@ export default function Home() {
       <div id="top" />
       <Hero />
 
-      <div className="mx-auto max-w-6xl space-y-16 px-6 py-16">
+      <div className="mx-auto max-w-6xl space-y-28 px-6 py-16 scroll-smooth snap-y snap-mandatory">
         <Section title="About" id="about">
           <p className="text-amber-200 leading-relaxed">
             I am a final-year Informatics student at Tshwane University of Technology seeking a six-month Work-Integrated Learning internship in Project Management, Business and Systems Analysis, System Testing, Database Administration, or Data Management and Analytics.

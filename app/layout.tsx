@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-        <div className="min-h-screen pt-24 bg-app text-app overflow-auto">{children}</div>
+        <div className="relative min-h-screen pt-24 bg-app text-app overflow-auto tech-background">{children}</div>
         <Footer />
       </body>
     </html>

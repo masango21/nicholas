@@ -21,15 +21,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'SMTP configuration is missing' }, { status: 500 })
     }
 
+    const secure = smtpPort === 465
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: smtpPort === 465,
+      secure,
       auth: { user: smtpUser, pass: smtpPass },
     })
 
     const info = await transporter.sendMail({
-      from: `${body.name} <${body.email}>`,
+      from: smtpUser,
+      replyTo: `${body.name} <${body.email}>`,
       to: toEmail,
       subject: `Portfolio contact form: ${body.name}`,
       text: `Name: ${body.name}\nEmail: ${body.email}\nPhone: ${body.phone || ''}\n\nMessage:\n${body.message}`,

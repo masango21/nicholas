@@ -84,3 +84,45 @@ html:not(.dark) .border-slate-800, html:not(.dark) .border-amber-800 { border-co
 /* Ensure body scroll is allowed and content not clipped */
 html, body { height: 100%; }
 body { overflow-y: auto; }
+
+.tech-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-background::before,
+.tech-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tech-background::before {
+  background-image:
+    radial-gradient(circle at 18% 15%, rgba(212,175,127,0.18), transparent 18%),
+    radial-gradient(circle at 80% 22%, rgba(212,175,127,0.14), transparent 18%),
+    radial-gradient(circle at 45% 75%, rgba(212,175,127,0.10), transparent 16%);
+  opacity: 0.55;
+}
+
+.tech-background::after {
+  background-image:
+    linear-gradient(rgba(212,175,127,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,127,0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(212,175,127,0.22) 1px, transparent 1px);
+  background-size: 180px 180px, 180px 180px, 40px 40px;
+  background-position: 0 0, 90px 90px, 20px 20px;
+  opacity: 0.34;
+  animation: tech-grid 30s linear infinite;
+}
+
+@keyframes tech-grid {
+  from {
+    background-position: 0 0, 90px 90px, 20px 20px;
+  }
+  to {
+    background-position: 180px 180px, 270px 270px, 60px 60px;
+  }
+}
