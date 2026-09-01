@@ -1,6 +1,30 @@
 import Hero from '../components/Hero'
 import Section from '../components/Section'
 import ContactForm from '../components/ContactForm'
+import ProjectCard from '../components/ProjectCard'
+
+const featuredProjects = [
+  {
+    title: 'Mzansi Palette',
+    description: 'A modern visual palette and design inspiration app focused on creative color exploration and accessible styling references.',
+    liveUrl: 'https://mzansi-pallete.vercel.app/'
+  },
+  {
+    title: 'Auth Monorepoo',
+    description: 'An authentication-focused monorepo built to centralize and simplify secure login and related services across multiple app modules.',
+    liveUrl: 'https://auth-monorepoo-dxqp-ecru.vercel.app/'
+  },
+  {
+    title: 'Lost Child Report Screens',
+    description: 'A reporting interface designed to assist with locating and reporting missing children through structured, user-friendly flows.',
+    liveUrl: 'https://lost-child-report-screens.vercel.app/'
+  },
+  {
+    title: 'Ubuntu Care',
+    description: 'A care-focused digital service experience designed to provide accessible support and organization for users needing responsive assistance.',
+    liveUrl: 'https://ubuntu-care-eight.vercel.app'
+  }
+]
 
 export default function Home() {
   return (
@@ -72,16 +96,29 @@ export default function Home() {
         </Section>
 
         <Section title="Projects" id="projects">
-          <div>
-            <h3 className="text-xl font-semibold text-amber-100">AquaFix</h3>
-            <p className="mt-3 text-amber-200">A digital system that allows residents to report water problems and enables municipalities to track and resolve issues efficiently.</p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-amber-200">
-              <li>Created a scope statement to define project objectives, deliverables, and stakeholders.</li>
-              <li>Built the project plan with schedules, tasks, resources, and timelines.</li>
-              <li>Gathered and documented requirements to ensure the system met stakeholder and user needs.</li>
-              <li>Designed UML diagrams in Visio to model system structure, processes, and interactions.</li>
-              <li>Created test cases for unit, integration, system, and acceptance testing.</li>
-            </ul>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold text-amber-100">AquaFix</h3>
+              <p className="mt-3 text-amber-200">A digital system that allows residents to report water problems and enables municipalities to track and resolve issues efficiently.</p>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-amber-200">
+                <li>Created a scope statement to define project objectives, deliverables, and stakeholders.</li>
+                <li>Built the project plan with schedules, tasks, resources, and timelines.</li>
+                <li>Gathered and documented requirements to ensure the system met stakeholder and user needs.</li>
+                <li>Designed UML diagrams in Visio to model system structure, processes, and interactions.</li>
+                <li>Created test cases for unit, integration, system, and acceptance testing.</li>
+              </ul>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {featuredProjects.map((project) => (
+                <ProjectCard
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  liveUrl={project.liveUrl}
+                />
+              ))}
+            </div>
           </div>
         </Section>
 
