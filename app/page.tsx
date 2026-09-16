@@ -35,11 +35,10 @@ export default function Home() {
       <div className="mx-auto max-w-6xl space-y-28 px-6 py-16 scroll-smooth snap-y snap-mandatory">
         <Section title="About" id="about">
           <p className="text-amber-200 leading-relaxed">
-            I am a final-year Informatics student at Tshwane University of Technology seeking a six-month Work-Integrated Learning internship in Project Management, Business and Systems Analysis, System Testing, Database Administration, or Data Management and Analytics.
+            I am a final-year Informatics student at Tshwane University of Technology currently completing a Work-Integrated Learning placement at 4IR Research Lab as a Full Stack Developer within the software development team.
           </p>
           <p className="mt-4 text-amber-200 leading-relaxed">
-            I have completed all theoretical coursework and am currently applying my skills in a professional environment at 4IR Research Lab while completing my WIL placement.
-            I enjoy collaborating with teams, solving real-world problems, and learning modern technologies that improve business operations and software quality.
+            I am applying my skills in a practical development environment while collaborating with teams, solving real-world problems, and building user-centered software solutions.
           </p>
         </Section>
 
@@ -47,12 +46,12 @@ export default function Home() {
           <div className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold text-amber-100">4IR Research Lab</h3>
-              <p className="mt-3 text-amber-200">Work-Integrated Learning placement, contributing to systems analysis, process documentation, and technical testing.</p>
+              <p className="mt-3 text-amber-200">Work-Integrated Learning placement as a Full Stack Developer in the software development team.</p>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-amber-200">
-                <li>Support requirements gathering and documentation for software solutions.</li>
-                <li>Assist with system testing, quality assurance, and process validation.</li>
-                <li>Work on database administration tasks and performance review for data workflows.</li>
-                <li>Collaborate with stakeholders to align technical delivery with business goals.</li>
+                <li>Develop front-end interfaces and user-facing components for internal applications.</li>
+                <li>Build server-side logic and APIs to support data-driven workflows.</li>
+                <li>Manage database schemas, queries, and integration with application services.</li>
+                <li>Collaborate with developers and stakeholders to deliver reliable software solutions.</li>
               </ul>
             </div>
             <div>
@@ -119,6 +118,19 @@ export default function Home() {
                 />
               ))}
             </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold text-amber-100">Student Task Manager</h3>
+            <p className="mt-3 text-amber-200">A task and project management web app designed to help students organise assignments, deadlines, and personal workflows.</p>
+            <a
+              href="https://student-task-manager-phs6.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex rounded-full bg-amber-500 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-amber-400"
+            >
+              View project
+            </a>
           </div>
         </Section>
 

@@ -57,6 +57,7 @@ export default function ProjectsPage() {
           </ul>
         </section>
 
+<<<<<<< HEAD
         <section className="mt-12">
           <h2 className="text-2xl font-semibold text-amber-100">Deployed GitHub Repositories</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -70,6 +71,21 @@ export default function ProjectsPage() {
               />
             ))}
           </div>
+        </section>
+
+        <section className="mt-8 rounded-3xl border border-amber-800 bg-neutral-900/80 p-6">
+          <h2 className="text-2xl font-semibold text-amber-100">Student Task Manager</h2>
+          <p className="mt-3 text-amber-200">
+            A task and project management web app designed to help students organise assignments, deadlines, and personal workflows.
+          </p>
+          <a
+            href="https://student-task-manager-phs6.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex rounded-full bg-amber-500 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-amber-400"
+          >
+            View project
+          </a>
         </section>
       </div>
     </main>

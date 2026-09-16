@@ -4,11 +4,7 @@ export default function AboutPage() {
       <div className="mx-auto max-w-5xl px-6 py-24">
         <h1 className="text-4xl font-semibold text-amber-200">About</h1>
         <p className="mt-6 text-amber-200 leading-relaxed">
-          I am a final-year Informatics student at Tshwane University of Technology seeking a six-month Work-Integrated Learning internship in Project Management, Business and Systems Analysis, System Testing, Database Administration, or Data Management and Analytics.
-        </p>
-        <p className="mt-4 text-amber-200 leading-relaxed">
-          I have completed all theoretical coursework and am currently applying my skills in a professional environment at 4IR Research Lab while completing my WIL placement.
-          I enjoy collaborating with teams, solving real-world problems, and learning modern technologies that improve business operations and software quality.
+          I am a final-year Informatics student at Tshwane University of Technology gaining practical experience at the 4IR Research Lab as a Full Stack Developer. I work across front-end and back-end development — building user interfaces, designing and managing databases, developing server-side logic, and ensuring seamless integration between systems.
         </p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <section className="rounded-3xl border border-amber-800 bg-neutral-900/80 p-6">
@@ -17,7 +13,7 @@ export default function AboutPage() {
           </section>
           <section className="rounded-3xl border border-amber-800 bg-neutral-900/80 p-6">
             <h2 className="text-2xl font-semibold text-amber-100">Experience</h2>
-            <p className="mt-3 text-amber-200">Currently working at 4IR Research Lab as part of my Work-Integrated Learning placement, supporting systems analysis, project documentation, and technical testing activities.</p>
+            <p className="mt-3 text-amber-200">Currently working at 4IR Research Lab as a Full Stack Developer, contributing to front-end and back-end development, database administration, server-side logic, and systems integration for innovative research solutions.</p>
           </section>
         </div>
         <section className="mt-12 rounded-3xl border border-amber-800 bg-neutral-900/80 p-6">

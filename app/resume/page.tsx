@@ -11,8 +11,9 @@ export default function ResumePage() {
           <h2 className="text-2xl font-semibold text-amber-100">CV Details</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-amber-200">
             <li>Final-year Informatics student at Tshwane University of Technology</li>
-            <li>Seeking a six-month Work-Integrated Learning internship in project management, business and systems analysis, system testing, database administration, or data management and analytics</li>
-            <li>Completed all theoretical modules and currently working at 4IR Research Lab</li>
+            <li>Currently gaining practical experience at 4IR Research Lab as a Full Stack Developer working across front-end and back-end systems</li>
+            <li>Specialize in Project Management, Business and Systems Analysis, System Testing, Database Administration, and Data Management and Analytics</li>
+            <li>Completed all theoretical modules and eager to apply my knowledge in real-world projects</li>
             <li>Final year project: AquaFix digital municipal water reporting system</li>
           </ul>
           <a
