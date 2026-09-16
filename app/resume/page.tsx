@@ -17,9 +17,10 @@ export default function ResumePage() {
             <li>Final year project: AquaFix digital municipal water reporting system</li>
           </ul>
           <a
-            href="/resume.pdf"
+            href="/Nkosinathi%20Nicholas%20Masango%20CV.pdf?v=20260916"
             target="_blank"
             rel="noreferrer"
+            download="Nkosinathi Nicholas Masango CV.pdf"
             className="mt-8 inline-flex rounded-full bg-amber-600 px-6 py-3 font-semibold text-black transition hover:bg-amber-500"
           >
             Download Full CV

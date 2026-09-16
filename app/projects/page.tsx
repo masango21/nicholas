@@ -57,7 +57,6 @@ export default function ProjectsPage() {
           </ul>
         </section>
 
-<<<<<<< HEAD
         <section className="mt-12">
           <h2 className="text-2xl font-semibold text-amber-100">Deployed GitHub Repositories</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">

@@ -150,23 +150,9 @@ export default function Home() {
             <div className="space-y-4">
               <p className="text-amber-200"><span className="font-semibold">Name:</span> Nkosinathi Nicholas Masango</p>
               <p className="text-amber-200"><span className="font-semibold">Phone:</span> 0713379855</p>
-              <p className="text-amber-200"><span className="font-semibold">Email:</span> <a href="mailto:nicholas790309@outlook.com" className="text-amber-100 underline">nicholas790309@outlook.com</a></p>
+              <p className="text-amber-200"><span className="font-semibold">Email:</span> <a href="mailto:masangonicholas20@gmail.com" className="text-amber-100 underline">masangonicholas20@gmail.com</a></p>
               <p className="text-amber-200"><span className="font-semibold">Address:</span> 07 Aubrey Matlala Road, Soshanguve, 0152, Gauteng</p>
               <p className="text-amber-200"><span className="font-semibold">LinkedIn:</span> <a href="https://www.linkedin.com/in/nkosinathi-masango-b0a771393/" className="text-amber-100 underline">linkedin.com/in/nkosinathi-masango-b0a771393</a></p>
-            </div>
-            <div className="space-y-6 rounded-3xl border border-amber-800 bg-neutral-900/80 p-6">
-              <div>
-                <h3 className="text-xl font-semibold text-amber-100">Download CV</h3>
-                <p className="mt-3 text-amber-200">View the full version of my CV, including academic history, project experience, and technical skills.</p>
-              </div>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex rounded-full bg-amber-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-400"
-              >
-                Download CV
-              </a>
             </div>
           </div>
           <div className="mt-8 rounded-3xl border border-amber-800 bg-neutral-900/80 p-6">
