@@ -5,6 +5,7 @@ import { useState } from 'react'
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -13,19 +14,25 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
+    setErrorMessage('')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
+      const result = await res.json().catch(() => ({}))
       if (res.ok) {
         setStatus('success')
         setForm({ name: '', email: '', phone: '', message: '' })
       } else {
+        const message = result.error || 'Failed to send message'
+        console.error(message)
+        setErrorMessage(message)
         setStatus('error')
       }
     } catch (err) {
+      setErrorMessage('Could not connect to the email service. Try again later.')
       setStatus('error')
     }
   }
@@ -53,7 +60,7 @@ export default function ContactForm() {
           {status === 'sending' ? 'Sending...' : 'Send Message'}
         </button>
         {status === 'success' && <p className="text-app">Message sent — thank you!</p>}
-        {status === 'error' && <p className="text-rose-500">Error sending message. Try again later.</p>}
+        {status === 'error' && <p className="text-rose-500">{errorMessage || 'Error sending message. Try again later.'}</p>}
       </div>
     </form>
   )
