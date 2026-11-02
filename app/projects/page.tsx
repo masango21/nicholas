@@ -5,13 +5,11 @@ const deployedProjects = [
     title: 'Ai Study Assistant',
     description: 'A study support app designed to help users work through learning tasks with AI-assisted guidance and streamlined interactions.',
     liveUrl: 'https://ai-study-assistant-eosin-ten.vercel.app/',
-    githubUrl: 'https://github.com/masango21/Ai-Study-Assistant-'
   },
   {
     title: 'Auth Monorepoo',
     description: 'An authentication-focused monorepo built to centralize and simplify secure login and related services across multiple app modules.',
-    liveUrl: 'https://auth-monorepoo-dxqp-ecru.vercel.app/',
-    githubUrl: 'https://github.com/masango21/auth_monorepoo'
+    liveUrl: 'https://auth-monorepoo-dxqp-ecru.vercel.app/'
   },
   {
     title: 'Mzansi Palette',
@@ -26,14 +24,12 @@ const deployedProjects = [
   {
     title: 'Mzansi Rent',
     description: 'A rental platform created for discovering and managing property listings with a user-friendly experience tailored to local housing needs.',
-    liveUrl: 'https://mzansi-rent.vercel.app',
-    githubUrl: 'https://github.com/masango21/Mzansi-rent'
+    liveUrl: 'https://mzansi-rent.vercel.app'
   },
   {
     title: 'Ubuntu Care',
     description: 'A care-focused digital service experience designed to provide accessible support and organization for users needing responsive assistance.',
-    liveUrl: 'https://ubuntu-care-eight.vercel.app',
-    githubUrl: 'https://github.com/masango21/Ubuntu-care-'
+    liveUrl: 'https://ubuntu-care-eight.vercel.app'
   }
 ]
 
@@ -58,7 +54,7 @@ export default function ProjectsPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-semibold text-amber-100">Deployed GitHub Repositories</h2>
+          <h2 className="text-2xl font-semibold text-amber-100">Deployed Projects</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {deployedProjects.map((project) => (
               <ProjectCard
@@ -66,7 +62,6 @@ export default function ProjectsPage() {
                 title={project.title}
                 description={project.description}
                 liveUrl={project.liveUrl}
-                githubUrl={project.githubUrl}
               />
             ))}
           </div>

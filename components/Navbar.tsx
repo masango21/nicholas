@@ -1,40 +1,66 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import ThemeToggle from './ThemeToggle'
 
+const links = [
+  { label: 'Home', href: '/#top' },
+  { label: 'About', href: '/#about' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Education', href: '/#education' },
+]
+
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-app bg-app/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
-        <Link href="/#top" className="text-lg sm:text-xl font-semibold tracking-wide text-app">
-          NKOSINATHI NICHOLAS MASANGO
+    <header className="site-header">
+      <div className="site-header-inner">
+        <Link href="/#top" className="brand" onClick={() => setMenuOpen(false)}>
+          <span className="brand-mark" aria-hidden="true">NM</span>
+          <span className="brand-name">Nkosinathi Masango</span>
         </Link>
-        <nav className="flex items-center gap-3 sm:gap-6 text-app">
-          <Link href="/#top" className="transition hover:text-amber-100">
-            Home
-          </Link>
-          <Link href="/#about" className="transition hover:text-amber-100">
-            About
-          </Link>
-          <Link href="/#experience" className="transition hover:text-amber-100">
-            Experience
-          </Link>
-          <Link href="/#skills" className="transition hover:text-amber-100">
-            Skills
-          </Link>
-          <Link href="/#projects" className="transition hover:text-amber-100">
-            Projects
-          </Link>
-          <Link href="/#education" className="transition hover:text-amber-100">
-            Education
-          </Link>
-          <Link href="/#contact" className="transition hover:text-amber-100">
-            Contact
-          </Link>
+
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href}>{link.label}</Link>
+          ))}
           <ThemeToggle />
+          <Link className="button button-small button-primary" href="/#contact">Let&apos;s talk</Link>
         </nav>
+
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span />
+          <span />
+        </button>
       </div>
+
+      {menuOpen && (
+        <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <div className="mobile-nav-actions">
+            <ThemeToggle />
+            <Link className="button button-primary" href="/#contact" onClick={() => setMenuOpen(false)}>
+              Let&apos;s talk
+            </Link>
+          </div>
+        </nav>
+      )}
     </header>
   )
 }

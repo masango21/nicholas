@@ -15,52 +15,93 @@ export default function ContactForm() {
     e.preventDefault()
     setStatus('sending')
     setErrorMessage('')
+
     try {
-      const res = await fetch('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
-      const result = await res.json().catch(() => ({}))
-      if (res.ok) {
+      const result = await response.json().catch(() => ({}))
+
+      if (response.ok) {
         setStatus('success')
         setForm({ name: '', email: '', phone: '', message: '' })
-      } else {
-        const message = result.error || 'Failed to send message'
-        console.error(message)
-        setErrorMessage(message)
-        setStatus('error')
+        return
       }
-    } catch (err) {
+
+      const message = result.error || 'Failed to send message'
+      console.error(message)
+      setErrorMessage(message)
+      setStatus('error')
+    } catch {
       setErrorMessage('Could not connect to the email service. Try again later.')
       setStatus('error')
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl card p-6 max-w-xl mx-auto">
-      <div>
-        <label className="block text-sm font-medium muted">Name</label>
-        <input name="name" value={form.name} onChange={handleChange} required className="mt-2 w-full rounded-2xl border border-app px-4 py-3 outline-none" />
+    <form onSubmit={handleSubmit} className="contact-form space-y-4">
+      <div className="form-field">
+        <label htmlFor="contact-name">Name</label>
+        <input
+          id="contact-name"
+          name="name"
+          autoComplete="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Your name"
+          required
+        />
       </div>
-      <div>
-        <label className="block text-sm font-medium muted">Email</label>
-        <input name="email" type="email" value={form.email} onChange={handleChange} required className="mt-2 w-full rounded-2xl border border-app px-4 py-3 outline-none" />
+      <div className="form-field">
+        <label htmlFor="contact-email">Email</label>
+        <input
+          id="contact-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="you@example.com"
+          required
+        />
       </div>
-      <div>
-        <label className="block text-sm font-medium muted">Phone</label>
-        <input name="phone" value={form.phone} onChange={handleChange} className="mt-2 w-full rounded-2xl border border-app px-4 py-3 outline-none" />
+      <div className="form-field">
+        <label htmlFor="contact-phone">Phone <span>(optional)</span></label>
+        <input
+          id="contact-phone"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          value={form.phone}
+          onChange={handleChange}
+          placeholder="Your phone number"
+        />
       </div>
-      <div>
-        <label className="block text-sm font-medium muted">Message</label>
-        <textarea name="message" value={form.message} onChange={handleChange} required className="mt-2 h-32 w-full rounded-2xl border border-app px-4 py-3 outline-none" />
+      <div className="form-field">
+        <label htmlFor="contact-message">Message</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Tell me a little about what you have in mind"
+          required
+        />
       </div>
-      <div className="flex items-center gap-4">
-        <button disabled={status === 'sending'} className="btn-accent rounded-full px-6 py-2 font-semibold" type="submit">
-          {status === 'sending' ? 'Sending...' : 'Send Message'}
+      <div className="form-submit-row">
+        <button disabled={status === 'sending'} className="button button-primary" type="submit">
+          {status === 'sending' ? 'Sending…' : 'Send message'}
         </button>
-        {status === 'success' && <p className="text-app">Message sent — thank you!</p>}
-        {status === 'error' && <p className="text-rose-500">{errorMessage || 'Error sending message. Try again later.'}</p>}
+        {status === 'success' && (
+          <p className="form-status" role="status">Message sent — thank you!</p>
+        )}
+        {status === 'error' && (
+          <p className="form-status form-status-error" role="alert">
+            {errorMessage || 'Error sending message. Try again later.'}
+          </p>
+        )}
       </div>
     </form>
   )

@@ -1,8 +1,11 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
-    <footer className="border-t border-app bg-app px-6 py-8 text-muted">
-      <div className="mx-auto max-w-6xl text-center">
-        <p className="text-app">Designed and built with Next.js — NKOSINATHI NICHOLAS MASANGO.</p>
+    <footer className="site-footer">
+      <div className="page-container site-footer-inner">
+        <p>© {new Date().getFullYear()} Nkosinathi Nicholas Masango</p>
+        <Link href="/#top">Back to top ↑</Link>
       </div>
     </footer>
   )

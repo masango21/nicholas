@@ -10,23 +10,24 @@ export default function ThemeToggle() {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     const nextTheme = saved ?? (prefersDark ? 'dark' : 'light')
     setTheme(nextTheme)
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark')
+    document.documentElement.classList.toggle('light', nextTheme === 'light')
   }, [])
 
   const toggleTheme = () => {
     const nextTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(nextTheme)
     window.localStorage.setItem('theme', nextTheme)
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark')
+    document.documentElement.classList.toggle('light', nextTheme === 'light')
   }
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
-      className="rounded-full border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-200 transition hover:bg-slate-800"
+      className="theme-toggle"
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
-      {theme === 'dark' ? 'Light' : 'Dark'}
+      {theme === 'dark' ? 'Light mode' : 'Dark mode'}
     </button>
   )
 }
